@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHer - My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">EmpowerHer</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#join">Join Us</a></li>
+                <li class="user-profile">
+                    <img id="nav-user-photo" src="placeholder-avatar.png" alt="Profile photo" class="nav-profile-photo">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="profile-page">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-photo-large">
+                    <img id="profile-photo" src="placeholder-avatar.png" alt="Profile photo">
+                </div>
+                <div class="profile-info">
+                    <h1 id="profile-name"></h1>
+                    <p id="profile-email"></p>
+                    <p id="profile-phone"></p>
+                </div>
+            </div>
+
+            <div class="profile-sections">
+                <div class="profile-section">
+                    <h2>Professional Background</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Experience:</label>
+                            <span id="profile-experience"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Work Type:</label>
+                            <span id="profile-worktype"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Work Location:</label>
+                            <span id="profile-location"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Expected Salary:</label>
+                            <span id="profile-salary"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>About Me</h2>
+                    <p id="profile-bio"></p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Resume</h2>
+                    <p id="profile-resume"></p>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="edit-btn" onclick="location.href='data-review.html'">Edit Profile</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="confirmation-modal">
+            <h2>Profile Complete!</h2>
+            <p>Your profile has been successfully created. Ready to start your job search?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn search-btn" onclick="location.href='job-search.html'">Start Searching</button>
+                <button class="modal-btn later-btn" onclick="closeModal()">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profile = JSON.parse(localStorage.getItem('completeProfile'));
+            if (profile) {
+                // 設置照片
+                const photoUrl = profile.photoUrl || 'placeholder-avatar.png';
+                document.getElementById('profile-photo').src = photoUrl;
+                document.getElementById('nav-user-photo').src = photoUrl;
+
+                // 設置個人信息
+                document.getElementById('profile-name').textContent = profile.engName;
+                document.getElementById('profile-email').textContent = profile.email;
+                document.getElementById('profile-phone').textContent = '+852 ' + profile.phone;
+                document.getElementById('profile-experience').textContent = profile.experience;
+                document.getElementById('profile-worktype').textContent = profile.workType.join(', ');
+                document.getElementById('profile-location').textContent = profile.workLocation;
+                document.getElementById('profile-salary').textContent = profile.salary;
+                document.getElementById('profile-bio').textContent = profile.bio || 'No bio provided';
+                document.getElementById('profile-resume').textContent = profile.resumeName || 'No resume uploaded';
+            }
+
+            // 導航欄照片點擊處理
+            document.querySelector('.nav-profile-photo').addEventListener('click', function() {
+                window.location.href = './user-profile.html';
+            });
+
+            setTimeout(() => {
+                document.getElementById('confirmationModal').classList.add('show');
+            }, 1000);
+
+            function closeModal() {
+                document.getElementById('confirmationModal').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html> 

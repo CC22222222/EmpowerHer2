@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search - EmpowerHer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 頁首 -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="EmpowerHer Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="job-search.html">Find Jobs</a></li>
+                    <li><a href="companies.html">Companies</a></li>
+                    <li><a href="career-resources.html">Career Resources</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-btn">Log In</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="job-search-page">
+        <div class="search-container">
+            <h1>Find Your Perfect Job</h1>
+            <div class="search-form">
+                <div class="search-row">
+                    <div class="search-field">
+                        <label>Keywords</label>
+                        <input type="text" placeholder="Job title, skills, or company">
+                    </div>
+                    <div class="search-field">
+                        <label>Location</label>
+                        <input type="text" placeholder="City or district">
+                    </div>
+                </div>
+
+                <div class="filter-sections">
+                    <div class="filter-section">
+                        <h3>Employment Type</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="employment" value="full-time"> Full Time
+                                <span class="count">(234)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="employment" value="part-time"> Part Time
+                                <span class="count">(156)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Work Location</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="location" value="office"> Work in Office
+                                <span class="count">(342)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="location" value="remote"> Work from Home
+                                <span class="count">(89)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Job Category</h3>
+                        <div class="filter-options grid-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="technology"> Technology & IT
+                                <span class="count">(145)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="finance"> Banking & Finance
+                                <span class="count">(98)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="marketing"> Marketing & PR
+                                <span class="count">(76)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="hr"> Human Resources
+                                <span class="count">(45)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="sales"> Sales
+                                <span class="count">(88)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="education"> Education & Training
+                                <span class="count">(52)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-actions">
+                    <button type="button" class="clear-btn">Clear All</button>
+                    <button type="submit" class="search-btn">Search Jobs</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="main-footer">
+        <!-- 與 search-results.html 相同的頁尾內容 -->
+    </footer>
+
+    <script src="job-search.js"></script>
+</body>
+</html> 

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHer - Review Your Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">EmpowerHer</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#join">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="review-page">
+        <div class="review-container">
+            <h1>Review Your Information</h1>
+            <p class="review-subtitle">Please verify your information and add any additional details</p>
+
+            <div class="review-sections">
+                <!-- 個人資料部分 -->
+                <div class="review-section">
+                    <div class="section-header">
+                        <h2>Personal Information</h2>
+                        <button class="edit-btn" data-section="personal">Edit</button>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>English Name:</label>
+                            <span id="review-eng-name"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Chinese Name:</label>
+                            <span id="review-chi-name"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Email:</label>
+                            <span id="review-email"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone:</label>
+                            <span id="review-phone"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 專業背景部分 -->
+                <div class="review-section">
+                    <div class="section-header">
+                        <h2>Professional Background</h2>
+                        <button class="edit-btn" data-section="professional">Edit</button>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Experience:</label>
+                            <span id="review-experience"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Work Type:</label>
+                            <span id="review-worktype"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Work Location:</label>
+                            <span id="review-location"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Expected Salary:</label>
+                            <span id="review-salary"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 額外資料部分 -->
+                <div class="review-section">
+                    <div class="section-header">
+                        <h2>Additional Information</h2>
+                    </div>
+                    <div class="additional-info">
+                        <!-- 照片上傳 -->
+                        <div class="upload-section">
+                            <label>Profile Photo</label>
+                            <div class="photo-upload">
+                                <img id="preview-photo" src="placeholder-avatar.png" alt="Profile photo">
+                                <input type="file" id="photo-input" accept="image/*">
+                                <button class="upload-btn">Upload Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- 簡歷上傳 -->
+                        <div class="upload-section">
+                            <label>Resume/CV</label>
+                            <div class="file-upload">
+                                <input type="file" id="resume-input" accept=".pdf,.doc,.docx">
+                                <button class="upload-btn">Upload Resume</button>
+                            </div>
+                            <span class="file-name" id="resume-name"></span>
+                        </div>
+
+                        <!-- 自我介紹 -->
+                        <div class="form-group bio-section">
+                            <div class="bio-input">
+                                <label for="bio">Brief Introduction <span class="word-limit">(50-200 words)</span></label>
+                                <textarea id="bio" rows="6" placeholder="Tell us about yourself..."
+                                          data-min="50" data-max="200"></textarea>
+                                <div class="word-count">
+                                    <span id="current-words">0</span>/<span id="max-words">200</span> words
+                                </div>
+                            </div>
+                            
+                            <div class="smart-tips">
+                                <div class="tips-header">
+                                    <span class="tips-icon">💡</span>
+                                    <h3>Smart Tips</h3>
+                                </div>
+                                <div class="tips-content">
+                                    <p>A good introduction helps companies understand you better:</p>
+                                    <ul>
+                                        <li>Use 50-200 words for a concise description</li>
+                                        <li>Highlight your career objectives</li>
+                                        <li>Mention your key skills and strengths</li>
+                                        <li>Share your professional passion</li>
+                                    </ul>
+                                    <div class="ai-helper">
+                                        <button class="ai-suggest-btn" id="aiSuggestBtn">
+                                            <span class="ai-icon">🤖</span>
+                                            Get AI Writing Suggestions
+                                        </button>
+                                        <div class="ai-suggestions" id="aiSuggestions"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-actions">
+                <button class="back-btn" onclick="history.back()">Back to Edit</button>
+                <button class="submit-btn">Complete Profile</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 保持與其他頁面相同的頁尾 -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 從 localStorage 獲取之前填寫的數據
+            const formData = JSON.parse(localStorage.getItem('formData'));
+            if (formData) {
+                document.getElementById('review-eng-name').textContent = formData.engName;
+                document.getElementById('review-chi-name').textContent = formData.chiName || 'Not provided';
+                document.getElementById('review-email').textContent = formData.email;
+                document.getElementById('review-phone').textContent = '+852 ' + formData.phone;
+                document.getElementById('review-experience').textContent = formData.experience;
+                document.getElementById('review-worktype').textContent = formData.workType.join(', ');
+                document.getElementById('review-location').textContent = formData.workLocation;
+                document.getElementById('review-salary').textContent = formData.salary;
+            }
+
+            // 照片上傳處理
+            const photoInput = document.getElementById('photo-input');
+            const uploadPhotoBtn = photoInput.nextElementSibling;
+            const previewPhoto = document.getElementById('preview-photo');
+            
+            uploadPhotoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (photoInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const photoData = e.target.result;
+                        previewPhoto.src = photoData;
+                        // 保存照片數據到 localStorage
+                        localStorage.setItem('userPhoto', photoData);
+                        alert('Photo uploaded successfully!');
+                    }
+                    reader.readAsDataURL(photoInput.files[0]);
+                }
+            });
+
+            // 簡歷檔案名稱顯示
+            document.getElementById('resume-input').addEventListener('change', function(e) {
+                const fileName = e.target.files[0]?.name;
+                document.getElementById('resume-name').textContent = fileName || '';
+            });
+
+            // 完成檔案按鈕處理
+            document.querySelector('.submit-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 收集額外資料
+                const additionalData = {
+                    bio: document.getElementById('bio').value,
+                    photoUrl: localStorage.getItem('userPhoto'),
+                    resumeName: document.getElementById('resume-name').textContent
+                };
+
+                // 合併所有數據
+                const formData = JSON.parse(localStorage.getItem('formData') || '{}');
+                const completeProfile = {
+                    ...formData,
+                    ...additionalData
+                };
+
+                // 保存完整數據
+                localStorage.setItem('completeProfile', JSON.stringify(completeProfile));
+
+                // 跳轉到個人檔案頁面
+                window.location.href = './user-profile.html';
+            });
+        });
+
+        // 編輯按鈕處理
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.dataset.section;
+                // 可以跳回表單並定位到相應部分
+                window.location.href = 'job-seeker-signup.html#' + section;
+            });
+        });
+    </script>
+</body>
+</html> 

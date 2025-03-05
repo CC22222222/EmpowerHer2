@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- 添加调试样式 -->
+    <style>
+        .site-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            position: fixed;  /* 固定在顶部 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;   /* 确保logo在其他元素上方 */
+            display: flex;
+            align-items: center;
+        }
+        .logo-container {
+            margin-left: 20px;
+            border: 2px solid blue;   /* 添加边框便于调试 */
+            min-width: 100px;         /* 确保容器有最小宽度 */
+            min-height: 40px;         /* 确保容器有最小高度 */
+        }
+        .site-logo {
+            height: 40px;    /* 调整logo大小 */
+            width: auto;
+            display: block;
+            border: 2px solid green;  /* 添加边框便于调试 */
+        }
+        
+        /* 为了防止内容被固定header遮挡 */
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 修改頁首部分 -->
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                EmpowerHer
+                <!-- 如果之後要使用圖片logo，可以取消下面這行的註釋 -->
+                <!-- <img src="images/logo/logo.png" alt="EmpowerHer Logo" class="site-logo"> -->
+            </a>
+        </div>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="login-button">Login</button>
+                <button class="join-button">Join Now</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="advanced-search">
+            <div class="search-header">
+                <h2>Find Your Perfect Opportunity</h2>
+                <p>Discover flexible roles aligned with your career goals</p>
+            </div>
+            
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label><span class="icon">💼</span> Employment Type</label>
+                    <select name="employment-type" class="custom-select">
+                        <option value="">All Types</option>
+                        <option value="full-time">Full Time</option>
+                        <option value="part-time">Part Time</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label><span class="icon">📍</span> Work Location</label>
+                    <select name="work-location" class="custom-select">
+                        <option value="">All Locations</option>
+                        <option value="office">Work in office</option>
+                        <option value="remote">Work from home</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label><span class="icon">🎯</span> Category</label>
+                    <select name="category" class="custom-select">
+                        <option value="">All Categories</option>
+                        <optgroup label="Business & Finance">
+                            <option value="accounting">Accounting & Finance</option>
+                            <option value="banking">Banking</option>
+                            <option value="consulting">Business Consulting</option>
+                            <option value="insurance">Insurance</option>
+                        </optgroup>
+                        <optgroup label="Creative & Media">
+                            <option value="advertising">Advertising</option>
+                            <option value="art">Art & Design</option>
+                            <option value="media">Digital Media</option>
+                            <option value="marketing">Marketing & PR</option>
+                        </optgroup>
+                        <optgroup label="Education">
+                            <option value="teaching">Teaching</option>
+                            <option value="training">Corporate Training</option>
+                            <option value="education-admin">Education Admin</option>
+                        </optgroup>
+                        <optgroup label="Technology">
+                            <option value="it">IT & Software</option>
+                            <option value="data">Data Analytics</option>
+                            <option value="design">UX/UI Design</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label><span class="icon">🔍</span> Keywords</label>
+                    <div class="search-input-wrapper">
+                        <input type="text" class="custom-input" placeholder="Skills, job title...">
+                        <button class="search-button">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-notice">
+                <div class="notice-content">
+                    <span class="notice-icon">✨</span>
+                    <div class="notice-text">
+                        <p>Guest Preview: View up to 5 opportunities</p>
+                        <p>Ready for more? <a href="#join-section" class="signup-link">Create your free account <span class="arrow">→</span></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 添加介紹部分 -->
+        <section class="about-us">
+            <div class="about-content">
+                <h2>Where Women Thrive, Careers Reignite</h2>
+                <p class="subtitle">Championing Gender Equality Through Opportunity & Flexibility</p>
+                <div class="about-text">
+                    <p>Empowering women to achieve their career aspirations through flexible work opportunities and professional growth.</p>
+                    <p>At EmpowerHer, we're revolutionising the future of work for women. Whether you're re-entering the workforce after a career break, balancing caregiving responsibilities, or seeking growth in a supportive environment.</p>
+                    <p class="highlight">Your potential deserves a platform that empowers you to succeed—on your terms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Why EmpowerHer -->
+        <section id="why" class="why-empowerher">
+            <h2>Why EmpowerHer?</h2>
+            <div class="why-boxes">
+                <div class="why-box">
+                    <div class="why-icon">🌱</div>
+                    <h3>Sustainable Growth</h3>
+                    <p>Building lasting careers through flexible opportunities and continuous learning</p>
+                </div>
+
+                <div class="why-box">
+                    <div class="why-icon">🤝</div>
+                    <h3>Inclusive Community</h3>
+                    <p>Creating a supportive network of professional women and mentors</p>
+                </div>
+
+                <div class="why-box">
+                    <div class="why-icon">💪</div>
+                    <h3>Empowerment Focus</h3>
+                    <p>Providing tools and resources for career advancement and leadership</p>
+                </div>
+            </div>
+
+            <div class="employer-section">
+                <h3>For Employers</h3>
+                <p>Join a movement to build stronger, more diverse teams. Tap into a talent pool of driven women ready to innovate—and watch your business thrive.</p>
+            </div>
+
+            <div class="cta-section">
+                <h2>✨ Reclaim Your Career. Redefine Your Future. ✨</h2>
+                <div class="cta-buttons">
+                    <a href="#join-section" class="cta-button primary">Join Now for Opportunities</a>
+                    <a href="#about" class="cta-button secondary">Learn More About Our Mission</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 成功故事 -->
+        <section id="stories" class="success-stories">
+            <h2>Inspiring Women Leaders</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/leaders/Indra%20Nooyie.jpg" alt="Indra Nooyi">
+                    </div>
+                    <div class="story-content">
+                        <div class="leader-info">
+                            <h3>Indra Nooyi</h3>
+                            <span class="position">Former CEO of PepsiCo</span>
+                        </div>
+                        <div class="quote-wrapper">
+                            <blockquote>"There is no limit to what we, as women, can accomplish."</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/leaders/Cher%20Wang.jpg" alt="Cher Wang">
+                    </div>
+                    <div class="story-content">
+                        <div class="leader-info">
+                            <h3>Cher Wang</h3>
+                            <span class="position">Co-founder of HTC</span>
+                        </div>
+                        <div class="quote-wrapper">
+                            <blockquote>"Women have the power to change the world; they just need to be given the chance."</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/leaders/Naina%20Lal%20Kidwai.avif" alt="Naina Lal Kidwai">
+                    </div>
+                    <div class="story-content">
+                        <div class="leader-info">
+                            <h3>Naina Lal Kidwai</h3>
+                            <span class="position">Former Country Head of HSBC India</span>
+                        </div>
+                        <div class="quote-wrapper">
+                            <blockquote>"Women should take up the challenge and break the glass ceiling."</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/leaders/Zhou%20Qunfei%20.jpg.webp" alt="Zhou Qunfei">
+                    </div>
+                    <div class="story-content">
+                        <div class="leader-info">
+                            <h3>Zhou Qunfei</h3>
+                            <span class="position">Founder of Lens Technology</span>
+                        </div>
+                        <div class="quote-wrapper">
+                            <blockquote>"Empowering women is essential for the growth of any society."</blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 資源部分 -->
+        <section class="career-resources">
+            <h2>Elevate Your Career Journey</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3>Strategic Career Planning</h3>
+                    <p>Transform your career aspirations into actionable goals with our expert-crafted roadmaps and personalized guidance.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💫</div>
+                    <h3>Skills Enhancement Hub</h3>
+                    <p>Access cutting-edge workshops, masterclasses, and certification programs designed for tomorrow's leaders.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🤝</div>
+                    <h3>Mentorship Connections</h3>
+                    <p>Connect with industry pioneers who've blazed trails and are ready to guide your professional journey.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💼</div>
+                    <h3>Interview Excellence</h3>
+                    <p>Master the art of interviewing with AI-powered practice sessions and expert feedback for confident presentations.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📈</div>
+                    <h3>Salary Negotiation Mastery</h3>
+                    <p>Learn proven strategies to advocate for your worth and secure compensation packages that reflect your value.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🌟</div>
+                    <h3>Leadership Development</h3>
+                    <p>Cultivate essential leadership skills through executive coaching and targeted development programs.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🔄</div>
+                    <h3>Career Transition Support</h3>
+                    <p>Navigate career changes confidently with tailored guidance and industry insights for seamless transitions.</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎨</div>
+                    <h3>Personal Brand Building</h3>
+                    <p>Create a compelling professional narrative that sets you apart in today's competitive landscape.</p>
+                </div>
+            </div>
+
+            <div class="resources-cta">
+                <div class="cta-container">
+                    <h3 class="cta-title">Ready to Transform Your Career?</h3>
+                    <p class="cta-text">Unlock exclusive resources and take the next step in your professional journey</p>
+                    <button class="explore-btn">
+                        <span class="btn-text">Explore Resources</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 在 Career Resources 和 Join Us 之間添加 -->
+        <section class="signup-encouragement">
+            <div class="encouragement-content">
+                <h2>Ready to Take the Next Step?</h2>
+                <p>Join thousands of women who have already found their path to success through EmpowerHer.</p>
+                <a href="#join-section" class="cta-button primary">Start Your Journey Today</a>
+            </div>
+        </section>
+
+        <!-- 6. 加入部分 -->
+        <section id="join-section" class="join-section">
+            <h2>Join Us</h2>
+            <div class="join-options">
+                <div class="join-card employee">
+                    <div class="join-icon">👩‍💼</div>
+                    <h3>For Job Seekers</h3>
+                    <ul class="benefits-list">
+                        <li>Access to exclusive job opportunities</li>
+                        <li>Professional development resources</li>
+                        <li>Networking with industry leaders</li>
+                        <li>Career coaching and mentorship</li>
+                    </ul>
+                    <a href="login.html" class="join-button employee-btn">
+                        Join as Job Seeker
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="join-card employer">
+                    <div class="join-icon">🏢</div>
+                    <h3>For Employers</h3>
+                    <ul class="benefits-list">
+                        <li>Access to diverse talent pool</li>
+                        <li>Employer branding opportunities</li>
+                        <li>DEI recruitment solutions</li>
+                        <li>Dedicated hiring support</li>
+                    </ul>
+                    <button class="join-button employer-btn">
+                        Join as Employer
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>EmpowerHer is dedicated to advancing women's careers through professional networking and growth opportunities.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="quick-links">
+                    <a href="#"><i class="fas fa-chevron-right"></i>Find Jobs</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Resources</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Success Stories</a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Join Us</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: empowerher@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Tel: +852-12345678</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Address: Hong Kong</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram: EmpowerHer</span>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook: EmpowerHer</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>FAQ</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>How to Get Started?</h4>
+                        <p>Create an account to access jobs, events, and networking opportunities.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Membership Plans</h4>
+                        <p>Choose between free and premium memberships with enhanced features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

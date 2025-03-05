@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHer - Career Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">EmpowerHer</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#join">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="signup-page">
+        <div class="signup-container">
+            <h1>Tell Us About Yourself</h1>
+            <p class="signup-subtitle">Help us personalize your job search experience</p>
+            <p class="required-notice">* Required fields</p>
+
+            <form class="signup-form" id="careerForm" novalidate>
+                <!-- 個人資料 -->
+                <div class="form-section" id="personal">
+                    <h2>Personal Information</h2>
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="eng-name">English Name <span class="required">*</span></label>
+                            <input type="text" id="eng-name" required 
+                                   pattern="^[a-zA-Z\s]{2,50}$"
+                                   data-error="Please enter a valid English name (2-50 characters)">
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="chi-name">Chinese Name <span class="optional">(Optional)</span></label>
+                            <input type="text" id="chi-name"
+                                   pattern="^[\u4e00-\u9fa5]{1,20}$"
+                                   data-error="Please enter a valid Chinese name">
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" required
+                               data-error="Please enter a valid email address">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="phone-input-group">
+                            <div class="country-code">+852</div>
+                            <input type="tel" id="phone" required
+                                   pattern="^[0-9]{8}$"
+                                   data-error="Please enter a valid 8-digit phone number">
+                        </div>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- 專業背景 -->
+                <div class="form-section" id="professional">
+                    <h2>Professional Background</h2>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience <span class="required">*</span></label>
+                        <select id="experience" required
+                                data-error="Please select your experience level">
+                            <option value="">Select experience</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5-10">5-10 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- 工作偏好 -->
+                <div class="form-section" id="preferences">
+                    <h2>Work Preferences</h2>
+                    <div class="form-group">
+                        <label>Work Type <span class="required">*</span> <span class="multi-select-hint">(Multiple choices allowed)</span></label>
+                        <div class="checkbox-group" data-error="Please select at least one work type">
+                            <label><input type="checkbox" name="worktype" value="fulltime"> Full-time</label>
+                            <label><input type="checkbox" name="worktype" value="parttime"> Part-time</label>
+                        </div>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Work Location <span class="required">*</span></label>
+                        <div class="radio-group" data-error="Please select your preferred work location">
+                            <label><input type="radio" name="worklocation" value="office" required> Work in Office</label>
+                            <label><input type="radio" name="worklocation" value="remote"> Work from Home</label>
+                        </div>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group workplace-area" style="display: none;">
+                        <label for="workplace">Workplace Area <span class="required">*</span></label>
+                        <select id="workplace" data-error="Please select your preferred workplace area">
+                            <option value="">Select area</option>
+                            <option value="hong-kong">Hong Kong Island</option>
+                            <option value="kowloon">Kowloon</option>
+                            <option value="new-territories">New Territories</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary">Expected Monthly Salary Range (HKD) <span class="required">*</span></label>
+                        <select id="salary" required
+                                data-error="Please select your expected salary range">
+                            <option value="">Select range</option>
+                            <option value="18-25k">$18,000 - $25,000</option>
+                            <option value="25-35k">$25,000 - $35,000</option>
+                            <option value="35-45k">$35,000 - $45,000</option>
+                            <option value="45k+">$45,000+</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Start Exploring Opportunities</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>EmpowerHer is dedicated to providing quality career opportunities for women</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><span class="social-icon">📱</span> Instagram</a>
+                    <a href="#" class="social-link"><span class="social-icon">💼</span> LinkedIn</a>
+                    <a href="#" class="social-link"><span class="social-icon">🐦</span> Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@empowerher.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Career Street, NY 10001</p>
+                <p class="newsletter">Subscribe to our newsletter for updates</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 重置所有錯誤消息
+            document.querySelectorAll('.error-message').forEach(error => error.textContent = '');
+            document.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
+            
+            let isValid = true;
+            
+            // 驗證必填字段
+            const requiredFields = ['eng-name', 'email', 'phone', 'experience', 'salary'];
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    showError(input);
+                    isValid = false;
+                } else if (input.pattern && !new RegExp(input.pattern).test(input.value)) {
+                    showError(input);
+                    isValid = false;
+                }
+            });
+            
+            // 驗證電子郵件格式
+            const email = document.getElementById('email');
+            if (email.value && !isValidEmail(email.value)) {
+                showError(email);
+                isValid = false;
+            }
+            
+            // 驗證工作類型選擇
+            const workTypes = document.querySelectorAll('input[name="worktype"]:checked');
+            if (workTypes.length === 0) {
+                const checkboxGroup = document.querySelector('.checkbox-group');
+                showError(checkboxGroup);
+                isValid = false;
+            }
+            
+            // 驗證工作地點
+            const workLocation = document.querySelector('input[name="worklocation"]:checked');
+            if (!workLocation) {
+                const radioGroup = document.querySelector('.radio-group');
+                showError(radioGroup.parentElement);
+                isValid = false;
+            }
+
+            if (isValid) {
+                try {
+                    // 收集表單數據
+                    const formData = {
+                        engName: document.getElementById('eng-name').value,
+                        chiName: document.getElementById('chi-name').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        experience: document.getElementById('experience').value,
+                        workType: Array.from(workTypes).map(cb => cb.value),
+                        workLocation: workLocation.value,
+                        salary: document.getElementById('salary').value
+                    };
+
+                    // 如果選擇了辦公室工作，添加工作地區
+                    if (workLocation.value === 'office') {
+                        formData.workplace = document.getElementById('workplace').value;
+                    }
+
+                    // 保存到 localStorage
+                    localStorage.setItem('formData', JSON.stringify(formData));
+
+                    // 直接使用 window.location 進行跳轉
+                    window.location.href = './data-review.html';
+                } catch (error) {
+                    console.error('Error during form submission:', error);
+                    alert('There was an error submitting the form. Please try again.');
+                }
+            }
+        });
+
+        function showError(element) {
+            const formGroup = element.closest('.form-group');
+            formGroup.classList.add('error');
+            const errorMessage = formGroup.querySelector('.error-message');
+            errorMessage.textContent = element.dataset.error;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // 添加工作地點選擇的控制邏輯
+        document.addEventListener('DOMContentLoaded', function() {
+            // 現有的工作地點選擇邏輯
+            const workLocationInputs = document.querySelectorAll('input[name="worklocation"]');
+            const workplaceArea = document.querySelector('.workplace-area');
+            const workplaceSelect = document.getElementById('workplace');
+
+            // 添加數據恢復邏輯
+            const savedData = localStorage.getItem('formData');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                
+                // 恢復文本輸入
+                document.getElementById('eng-name').value = formData.engName || '';
+                document.getElementById('chi-name').value = formData.chiName || '';
+                document.getElementById('email').value = formData.email || '';
+                document.getElementById('phone').value = formData.phone || '';
+                
+                // 恢復下拉選擇
+                document.getElementById('experience').value = formData.experience || '';
+                document.getElementById('salary').value = formData.salary || '';
+
+                // 恢復工作類型複選框
+                if (formData.workType && Array.isArray(formData.workType)) {
+                    formData.workType.forEach(type => {
+                        const checkbox = document.querySelector(`input[name="worktype"][value="${type}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+
+                // 恢復工作地點單選框
+                if (formData.workLocation) {
+                    const locationRadio = document.querySelector(`input[name="worklocation"][value="${formData.workLocation}"]`);
+                    if (locationRadio) {
+                        locationRadio.checked = true;
+                        // 如果是辦公室工作，顯示並填充工作地區
+                        if (formData.workLocation === 'office') {
+                            workplaceArea.style.display = 'block';
+                            workplaceSelect.required = true;
+                            workplaceSelect.value = formData.workplace || '';
+                        }
+                    }
+                }
+
+                // 如果有錨點，滾動到相應部分
+                const hash = window.location.hash;
+                if (hash) {
+                    const section = document.querySelector(hash);
+                    if (section) {
+                        setTimeout(() => {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.classList.add('highlight-section');
+                            setTimeout(() => {
+                                section.classList.remove('highlight-section');
+                            }, 2000);
+                        }, 100);
+                    }
+                }
+            }
+
+            // 保持現有的工作地點選擇邏輯
+            workLocationInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.value === 'office') {
+                        workplaceArea.style.display = 'block';
+                        workplaceSelect.required = true;
+                    } else {
+                        workplaceArea.style.display = 'none';
+                        workplaceSelect.required = false;
+                        workplaceSelect.value = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

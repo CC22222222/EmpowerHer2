@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Registration - EmpowerHer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/Logo/logo.png" alt="EmpowerHer Logo" class="site-logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="employer-signup-page">
+        <div class="progress-bar">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-text">Benefits</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-text">Company Info</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-text">Subscription</div>
+            </div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-text">Payment</div>
+            </div>
+            <div class="progress-step" data-step="5">
+                <div class="step-number">5</div>
+                <div class="step-text">Post Jobs</div>
+            </div>
+        </div>
+
+        <div class="signup-steps">
+            <!-- Step 1: Benefits -->
+            <section class="signup-step active" id="step1">
+                <h2>Why Choose EmpowerHer?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img src="talent-pool.svg" alt="Diverse Talent Pool">
+                        <h3>Access to Diverse Talent Pool</h3>
+                        <p>Connect with qualified female professionals across various industries and expertise levels.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="brand-visibility.svg" alt="Enhanced Brand Visibility">
+                        <h3>Enhanced Brand Visibility</h3>
+                        <p>Showcase your company's commitment to diversity and inclusion to attract top talent.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="matching.svg" alt="Smart Matching">
+                        <h3>Smart Candidate Matching</h3>
+                        <p>Our AI-powered system helps you find the perfect candidates for your positions.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="support.svg" alt="Dedicated Support">
+                        <h3>Dedicated Support</h3>
+                        <p>Get personalized assistance from our team throughout your hiring process.</p>
+                    </div>
+                </div>
+                <button class="next-step">Continue</button>
+            </section>
+
+            <!-- Step 2: Company Information -->
+            <section class="signup-step" id="step2">
+                <h2>Tell Us About Your Company</h2>
+                <form class="company-form">
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Industry</label>
+                        <select required>
+                            <option value="">Select Industry</option>
+                            <option value="technology">Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="healthcare">Healthcare</option>
+                            <!-- 更多選項 -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Size</label>
+                        <select required>
+                            <option value="">Select Size</option>
+                            <option value="1-50">1-50 employees</option>
+                            <option value="51-200">51-200 employees</option>
+                            <option value="201-500">201-500 employees</option>
+                            <option value="501+">501+ employees</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Description</label>
+                        <textarea required rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Website</label>
+                        <input type="url" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company Logo</label>
+                        <input type="file" accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="prev-step">Back</button>
+                        <button type="button" class="next-step">Continue</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Step 3: Subscription Plans -->
+            <section class="signup-step" id="step3">
+                <h2>Choose Your Plan</h2>
+                <div class="special-offer">
+                    <div class="offer-badge">Special Offer</div>
+                    <h3>25% OFF First 3 Months</h3>
+                    <p>Limited time offer for new employers</p>
+                </div>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="original">HK$1,000</span>
+                            <span class="discounted">HK$750</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Up to 5 job postings</li>
+                            <li>Basic candidate matching</li>
+                            <li>Standard support</li>
+                        </ul>
+                        <button class="select-plan" data-plan="starter">Select Plan</button>
+                    </div>
+                    <div class="plan-card recommended">
+                        <div class="recommended-badge">Most Popular</div>
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="original">HK$2,000</span>
+                            <span class="discounted">HK$1,500</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Up to 15 job postings</li>
+                            <li>Advanced candidate matching</li>
+                            <li>Priority support</li>
+                            <li>Featured company profile</li>
+                        </ul>
+                        <button class="select-plan" data-plan="professional">Select Plan</button>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="original">HK$3,500</span>
+                            <span class="discounted">HK$2,625</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Unlimited job postings</li>
+                            <li>Premium candidate matching</li>
+                            <li>Dedicated account manager</li>
+                            <li>Custom branding options</li>
+                            <li>Advanced analytics</li>
+                        </ul>
+                        <button class="select-plan" data-plan="enterprise">Select Plan</button>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="prev-step">Back</button>
+                    <button class="next-step">Continue</button>
+                </div>
+            </section>
+
+            <!-- Step 4: Payment -->
+            <section class="signup-step" id="step4">
+                <h2>Payment Details</h2>
+                <div class="payment-form">
+                    <!-- 支付表單 -->
+                </div>
+                <div class="form-actions">
+                    <button class="prev-step">Back</button>
+                    <button class="next-step">Complete Payment</button>
+                </div>
+            </section>
+
+            <!-- Step 5: Post Jobs -->
+            <section class="signup-step" id="step5">
+                <h2>Start Posting Jobs</h2>
+                <div class="success-message">
+                    <img src="success.svg" alt="Success">
+                    <h3>Welcome to EmpowerHer!</h3>
+                    <p>Your account has been successfully created. You can now start posting jobs and finding great talent.</p>
+                    <button class="post-job-btn">Post Your First Job</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="main-footer">
+        <!-- 與其他頁面相同的頁尾 -->
+    </footer>
+
+    <script src="employer-signup.js"></script>
+</body>
+</html> 
